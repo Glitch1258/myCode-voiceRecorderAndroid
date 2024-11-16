@@ -3,14 +3,22 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/> 
 
-    <application
-	android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round">
-        <!-- Ensure application content is properly enclosed here -->
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round"	android:theme="@style/Theme.VoiceRecorder">
+	    <activity android:name=".Main"><!--runs Main.java-->
+                    <!--filters allawable intents-->
+		    <intent-filter> >
+			    <action android:name = "android.intent.action.MAIN"/>
+			    <category android:name = "android.intent.category.LAUNCHER"/>
+		    </intent-filter>
+	    </activity>
+	    <service android:name = ".FloatingWindow" android:exported="false"/>
+    
+   
     </application>
 </manifest>
 
-
-<!-- @mipmap/ic_launcher signifies that the icon is present in res/mipmap/ic_launcher.png -->
+ <!-- this is a comment -->
+<!-- @mipmap/ic_launcher signifies that the icon is present in res/mipmap/ic_launcher.png 	
+"@string/app_name" refers to  a string resource that has  been defined  in res/values/strings.xml
+"@style/Theme.Voicerecorder" refers to a theme described in res/values/styles.xml
+-->
